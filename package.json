@@ -1,0 +1,30 @@
+{
+  "name": "risk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomclegg/coop-risk.git"
+  },
+  "author": "thomas clegg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomclegg/coop-risk/issues"
+  },
+  "homepage": "https://github.com/thomclegg/coop-risk#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "node-sass": "^4.10.0"
+  },
+  "dependencies": {
+    "coop-frontend-toolkit": "^2.1.4"
+  }
+}

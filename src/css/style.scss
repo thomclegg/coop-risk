@@ -1,0 +1,26 @@
+@import "reset";
+@import "_variables.scss";
+@import 'node_modules/coop-frontend-toolkit/styles/_fonts.scss';
+@import 'node_modules/coop-frontend-toolkit/styles/_responsive.scss';
+@import 'node_modules/coop-frontend-toolkit/styles/_typography.scss';
+
+
+
+
+$med-spacer: 42px;
+
+body {
+  max-width: 1440px;
+  padding: 5%;
+}
+
+header {
+  height: 400px;
+  max-width: 100%;
+  padding: $med-spacer;
+  background-color: $green-blue-mid;
+}
+
+h1 {
+  color: #fff;
+}
