@@ -3,6 +3,7 @@
 @import 'node_modules/coop-frontend-toolkit/styles/_fonts.scss';
 @import 'node_modules/coop-frontend-toolkit/styles/_responsive.scss';
 @import 'node_modules/coop-frontend-toolkit/styles/_typography.scss';
+@import 'node_modules/coop-frontend-toolkit/styles/_logo.scss';
 
 
 
@@ -15,12 +16,20 @@ body {
 }
 
 header {
-  height: 400px;
+  height: 100px;
   max-width: 100%;
-  padding: $med-spacer;
-  background-color: $green-blue-mid;
+  background-color: $grey-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: $med-spacer;
 }
 
 h1 {
   color: #fff;
+}
+
+img.logo {
+  height: 46px;
+  width: 46px;
 }
