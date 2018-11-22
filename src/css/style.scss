@@ -4,32 +4,126 @@
 @import 'node_modules/coop-frontend-toolkit/styles/_responsive.scss';
 @import 'node_modules/coop-frontend-toolkit/styles/_typography.scss';
 @import 'node_modules/coop-frontend-toolkit/styles/_logo.scss';
-
-
-
-
 $med-spacer: 42px;
+$edge-padding: 8%;
 
 body {
   max-width: 1440px;
-  padding: 5%;
+  background-color: $grey-light;
+  margin: 0 auto;
 }
 
 header {
-  height: 100px;
+  height: 300px;
   max-width: 100%;
-  background-color: $grey-light;
+  background-color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-left: $med-spacer;
-}
-
-h1 {
-  color: #fff;
+  padding: 80px 8% 0;
 }
 
 img.logo {
   height: 46px;
   width: 46px;
+}
+
+
+
+main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 $edge-padding $edge-padding $edge-padding;
+}
+
+div.data-cards {
+  // margin: 0 8%;
+  length: 100%;
+  display: flex;
+  z-index: 2;
+  position: relative;
+  top: -110px;
+}
+
+.card--data {
+  width: 50%;
+}
+
+.card__content {
+  height: 221px;
+  background-color: white;
+  padding: $edge-padding;
+}
+
+.card--title .card__content {
+  background-color: $purple-dark;
+}
+
+section.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 64px 64px;
+  // padding: 0 $edge-padding;
+  margin-bottom: $edge-padding;
+}
+
+a {
+  text-decoration: none;
+  color: $body-copy;
+}
+
+a.item-content {
+  display: block;
+  border-bottom: 5px solid rgba(15,114,152,0.1);
+  padding: 32px 0;
+  transition: all 0.15s ease;
+}
+
+a.item-content:hover {
+  border-bottom: 5px solid rgba(15,114,152,1);
+  cursor: pointer;
+}
+
+a.item-content:hover h2.signpost {
+  text-decoration: none;
+  // color: $coop-blue-highlighted;
+}
+
+section.extra-width {
+  background-color: #fff;
+  padding: 0 32px;
+  width: calc(100% + 64px);
+  margin-left: -32px;
+  height: 400px;
+  
+}
+
+
+
+
+
+
+
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+h2.signpost {
+  text-decoration: underline;
+  color: $coop-link-blue;
+  transition: all 0.5s ease;
+}
+
+h3 {
+  font-family: $regular;
+}
+
+p {
+  font-family: $regular;
+  color: white;
 }
