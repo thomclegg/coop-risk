@@ -22,9 +22,13 @@ header {
   height: 300px;
   max-width: 100%;
   background-color: white;
+  padding: 80px 8% 0;
+}
+
+nav {
   display: flex;
   justify-content: space-between;
-  padding: 80px 8% 0;
+  align-items: center;
 }
 
 img.logo {
@@ -32,6 +36,25 @@ img.logo {
   width: 46px;
 }
 
+.nav-items {
+  display: flex;
+  width: 30%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+a.nav-links {
+  font-family: $regular;
+  font-size: 20px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid $body-copy;
+}
+
+a.nav-links:hover {
+  font-family: $bold;
+  border-bottom: none;
+
+}
 
 
 main {
@@ -116,6 +139,11 @@ div.two-grid {
 
 h1 {
   color: white;
+}
+
+h1.on-light {
+  color: $body-copy;
+  margin-bottom: $edge-padding;
 }
 
 h2 {
