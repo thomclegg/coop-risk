@@ -1,4 +1,8 @@
 @import "reset";
+
+@import "template-style";
+
+
 @import "_variables.scss";
 @import 'node_modules/coop-frontend-toolkit/styles/_fonts.scss';
 @import 'node_modules/coop-frontend-toolkit/styles/_responsive.scss';
@@ -6,11 +10,20 @@
 @import 'node_modules/coop-frontend-toolkit/styles/_logo.scss';
 
 
+
 $med-spacer: 42px;
 $edge-padding: 8%;
 
+// sets the sizes for each media query
+$mq-medium: 768px;
+$mq-small: 425px;
 
-
+// creates a mixin for all media queries
+@mixin mq($width) {
+  @media (max-width: $width) {
+    @content
+  }
+}
 
 body {
   max-width: 1440px;
@@ -38,30 +51,64 @@ img.logo {
 
 .nav-items {
   display: flex;
-  width: 30%;
+  width: 40%;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-end;
+  @include mq($mq-medium) {
+    width: 50%;
+  }
+  @include mq($mq-small) {
+    width: 70%;
+  }
 }
 
 a.nav-links {
   font-family: $regular;
   font-size: 20px;
   padding-bottom: 2px;
+  margin-left: 42px;
   border-bottom: 1px solid $body-copy;
+  @include mq($mq-small) {
+    font-size: 16px;
+    margin-left: 22px;
+  }
 }
 
 a.nav-links:hover {
   font-family: $bold;
   border-bottom: none;
-
 }
-
 
 main {
   position: absolute;
   height: 100%;
   width: 100%;
-  padding: 0 $edge-padding $edge-padding $edge-padding;
+  padding: 0 $edge-padding $edge-padding;
+}
+
+section.top-five-grid {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $edge-padding;
+}
+
+.top-five-grid h1 {
+  color: $body-copy;
+}
+
+.top-five-item {
+  padding: 20px 0;
+  border-bottom: 5px solid rgba(15,114,152,0.1);
+  transition: all 0.5s ease;
+}
+
+.top-five-item:hover {
+  border-bottom: 5px solid rgba(15,114,152,1);
+  cursor: pointer;
+}
+
+.top-five-item:hover h2 {
+  text-decoration: none;
 }
 
 div.data-cards {
@@ -71,10 +118,16 @@ div.data-cards {
   z-index: 2;
   position: relative;
   top: -110px;
+  @include mq($mq-small) {
+    flex-wrap: wrap;
+  }
 }
 
 .card--data {
   width: 50%;
+  @include mq($mq-small) {
+    width: 100%;
+  }
 }
 
 .card__content {
@@ -93,6 +146,14 @@ section.grid {
   grid-gap: 64px 64px;
   // padding: 0 $edge-padding;
   margin-bottom: $edge-padding;
+  @include mq($mq-medium) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 42px 42px;
+  }
+  @include mq($mq-small) {
+    grid-template-columns: 1fr;
+    grid-gap: 28px 28px;
+  }
 }
 
 a {
@@ -105,6 +166,9 @@ a.item-content {
   border-bottom: 5px solid rgba(15,114,152,0.1);
   padding-bottom: 32px;
   transition: all 0.15s ease;
+  @include mq($mq-small) {
+    padding-bottom: 18px;
+  }
 }
 
 a.item-content:hover {
@@ -129,13 +193,7 @@ div.two-grid {
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 64px;
 }
-
-
-
-
-
-
-
+// TEXT STYLES
 
 h1 {
   color: white;
@@ -146,9 +204,7 @@ h1.on-light {
   margin-bottom: $edge-padding;
 }
 
-h2 {
-  color: white;
-}
+
 
 h2.signpost {
   text-decoration: underline;
@@ -162,5 +218,28 @@ h3 {
 
 p {
   font-family: $regular;
-  color: white;
+}
+
+
+
+// detail Page
+
+
+.insight-text h1 {
+  color: black;
+}
+
+.insight-text p {
+  padding-top: 20px;
+}
+
+
+
+.card__content
+.white-bg {
+  background-color: white;
+}
+
+.dotted-method {
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(114,220,219,0.5), rgba(114,220,219,0.5) 1px, transparent 1px, transparent 100%);
 }

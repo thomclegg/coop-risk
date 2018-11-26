@@ -25,7 +25,7 @@ gulp.task("sass", function() {
 })
 
 gulp.task("html", function () {
-  return gulp.src("src/index.html")
+  return gulp.src("src/*.html")
     .pipe(gulp.dest("dist"))
 })
 
@@ -39,18 +39,25 @@ gulp.task("img", function () {
     .pipe(gulp.dest("dist/img"))
 })
 
+gulp.task("javascript", function () {
+  return gulp.src("src/js/*")
+    .pipe(gulp.dest("dist/js"))
+})
+
 gulp.task("watch", function () {
 
-  browserSync.init({
+  browserSync.init( ["js/*.js"], {
     server: {
       baseDir: "dist"
     }
   })
 
   gulp.watch("src/index.html", ["html"]).on("change", browserSync.reload)
+  gulp.watch("src/detail-template.html", ["html"]).on("change", browserSync.reload)
   gulp.watch("src/css/style.scss", ["sass"])
   gulp.watch("src/fonts/*", ["fonts"])
   gulp.watch("src/img/*", ["img"])
+  gulp.watch("src/js/*", ["javascript"])
 })
 
-gulp.task('default', ["html", "sass", "fonts", "img", "watch"]);
+gulp.task('default', ["html", "sass", "fonts", "img", "javascript", "watch"]);
