@@ -32,10 +32,9 @@ body {
 }
 
 header {
-  height: 300px;
   max-width: 100%;
   background-color: white;
-  padding: 80px 8% 0;
+  padding: 80px 8% 20px 8%;
 }
 
 nav {
@@ -51,9 +50,10 @@ img.logo {
 
 .nav-items {
   display: flex;
-  width: 40%;
+  width: 60%;
   align-items: flex-start;
   justify-content: flex-end;
+
   @include mq($mq-medium) {
     width: 50%;
   }
@@ -81,7 +81,7 @@ a.nav-links:hover {
 
 main {
   position: absolute;
-  height: 100%;
+
   width: 100%;
   padding: 0 $edge-padding $edge-padding;
 }
@@ -183,7 +183,8 @@ a.item-content:hover h2.signpost {
 
 section.extra-width {
   background-color: #fff;
-  padding: 32px;
+  padding: 64px;
+  margin-bottom: $edge-padding;
   width: calc(100% + 64px);
   margin-left: -32px;
 }
@@ -191,12 +192,16 @@ section.extra-width {
 div.two-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px 64px;
+  grid-gap: 64px 64px;
 }
 // TEXT STYLES
 
 h1 {
   color: white;
+}
+
+.wrapper h1 {
+  color: #000000;
 }
 
 h1.on-light {
@@ -216,6 +221,11 @@ h3 {
   font-family: $regular;
 }
 
+h4 {
+  font-size: 28px;
+  font-family: $bold;
+}
+
 p {
   font-family: $regular;
 }
@@ -224,6 +234,27 @@ p {
 
 // detail Page
 
+header p {
+  color: #ffffff;
+}
+
+.color-header {
+  background-color: #334D89;
+  margin-bottom: 46px;
+}
+
+.color-header nav {
+  margin-bottom: $edge-padding;
+}
+
+.color-header .nav-items a {
+  color: white;
+  border-bottom: 1px solid #ffffff;
+}
+
+div.wrapper {
+  padding: $edge-padding 32px 0 32px;
+}
 
 .insight-text h1 {
   color: black;
@@ -233,13 +264,46 @@ p {
   padding-top: 20px;
 }
 
+.insight-text h1 {
+  color: #0F8482;
+}
 
+.insight-text h4 {
+  font-size: 22px;
+  font-family: $medium;
+  border-bottom: 5px solid rgba(15,114,152,0.1);
+  padding-bottom: 32px;
+  transition: all 0.15s ease;
+  margin-bottom: 28px;
+}
+
+h4.quote {
+  font-size: 28px;
+  font-family: $bold;
+}
+
+.user-need h4 {
+  border-bottom: none;
+}
 
 .card__content
 .white-bg {
   background-color: white;
 }
 
+div.survey {
+  width: 100%;
+  background-color: #d9e8ff;
+  border-left: solid 6px #418cfc;
+  padding: 20px;
+}
+
+div.survey h3 {
+  font-size: 20px;
+
+}
+
+// dotted bg
 .dotted-method {
   background-image: -webkit-repeating-radial-gradient(center center, rgba(114,220,219,0.5), rgba(114,220,219,0.5) 1px, transparent 1px, transparent 100%);
 }
