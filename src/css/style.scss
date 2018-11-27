@@ -1,23 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
 @import "reset";
-
 @import "template-style";
-
-
 @import "_variables.scss";
 @import 'node_modules/coop-frontend-toolkit/styles/_fonts.scss';
 @import 'node_modules/coop-frontend-toolkit/styles/_responsive.scss';
 @import 'node_modules/coop-frontend-toolkit/styles/_typography.scss';
 @import 'node_modules/coop-frontend-toolkit/styles/_logo.scss';
-
-
-
 $med-spacer: 42px;
 $edge-padding: 8%;
-
 // sets the sizes for each media query
 $mq-medium: 768px;
 $mq-small: 425px;
-
 // creates a mixin for all media queries
 @mixin mq($width) {
   @media (max-width: $width) {
@@ -34,7 +30,12 @@ body {
 header {
   max-width: 100%;
   background-color: white;
-  padding: 80px 8% 20px 8%;
+  padding: 80px 8% 20px;
+  position: relative;
+}
+
+header.index-header {
+  padding-bottom: 160px;
 }
 
 nav {
@@ -53,7 +54,6 @@ img.logo {
   width: 60%;
   align-items: flex-start;
   justify-content: flex-end;
-
   @include mq($mq-medium) {
     width: 50%;
   }
@@ -80,8 +80,7 @@ a.nav-links:hover {
 }
 
 main {
-  position: absolute;
-
+  // position: absolute;
   width: 100%;
   padding: 0 $edge-padding $edge-padding;
 }
@@ -156,6 +155,14 @@ section.grid {
   }
 }
 
+.grid-item.white-bg {
+  background-color: #ffffff;
+  position: absolute;
+  top: 46px;
+  left: 0;
+  padding: 20px;
+}
+
 a {
   text-decoration: none;
   color: $body-copy;
@@ -189,13 +196,34 @@ section.extra-width {
   margin-left: -32px;
 }
 
+section.extra-width.blue-bg {
+  background-color: #344e87;
+  height: 240px;
+  position: relative;
+  margin-bottom: 500px;
+}
+
+.card-wrapper {
+  background-color: #ffffff;
+  width: 90%;
+  position: absolute;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 46px 46px;
+}
+
+.card-wrapper .grid-item {
+  padding-bottom: 20px;
+  // border-bottom: 5px solid rgba(15,114,152,0.1);
+}
+
 div.two-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 64px 64px;
 }
 // TEXT STYLES
-
 h1 {
   color: white;
 }
@@ -206,10 +234,8 @@ h1 {
 
 h1.on-light {
   color: $body-copy;
-  margin-bottom: $edge-padding;
+  margin-bottom: 32px;
 }
-
-
 
 h2.signpost {
   text-decoration: underline;
@@ -230,10 +256,10 @@ p {
   font-family: $regular;
 }
 
-
-
+.card__content p {
+  color: #ffffff;
+}
 // detail Page
-
 header p {
   color: #ffffff;
 }
@@ -253,7 +279,7 @@ header p {
 }
 
 div.wrapper {
-  padding: $edge-padding 32px 0 32px;
+  padding: $edge-padding 32px 0;
 }
 
 .insight-text h1 {
@@ -286,8 +312,7 @@ h4.quote {
   border-bottom: none;
 }
 
-.card__content
-.white-bg {
+.card__content .white-bg {
   background-color: white;
 }
 
@@ -300,9 +325,7 @@ div.survey {
 
 div.survey h3 {
   font-size: 20px;
-
 }
-
 // dotted bg
 .dotted-method {
   background-image: -webkit-repeating-radial-gradient(center center, rgba(114,220,219,0.5), rgba(114,220,219,0.5) 1px, transparent 1px, transparent 100%);
