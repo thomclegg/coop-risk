@@ -79,10 +79,19 @@ a.nav-links:hover {
   border-bottom: none;
 }
 
+a.nav-links.active {
+  font-family: $bold;
+  border-bottom: none;
+}
+
 main {
   // position: absolute;
   width: 100%;
-  padding: 0 $edge-padding $edge-padding;
+  padding: $edge-padding $edge-padding;
+}
+
+main.top-padding {
+  padding-top: 0;
 }
 
 section.top-five-grid {
@@ -228,7 +237,17 @@ div.two-grid {
   border-bottom: 5px solid rgba(15,114,152,0.1);
 }
 
+ul {
+  text-decoration: none;
+  font-family: $regular;
+  list-style-type: disc;
+}
 
+li {
+  display: list-item;
+  line-height: 1.5;
+  margin-left: 46px;
+}
 
 
 // TEXT STYLES
@@ -300,8 +319,9 @@ p {
 
 .card--description p {
   color: $body-copy;
-
 }
+
+
 
 
 
@@ -372,6 +392,7 @@ div.survey h3 {
 .card-style:hover {
   background-color: $blue-mid;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .card-style:hover h2.signpost  {
@@ -402,8 +423,44 @@ div.related-title a {
   color: $coop-link-hover-blue;
 }
 
+
+
+.text-block {
+  width: 60%;
+}
+
+
+
+
 // dotted bg
 .dotted-method {
   background-image: -webkit-repeating-radial-gradient(center center, rgba(114,220,219,0.5), rgba(114,220,219,0.5) 1px, transparent 1px, transparent 100%);
   background-size: 16px 16px;
+}
+
+
+// bg colours
+
+.white-bg {
+  background-color: #ffffff;
+}
+
+.purple-bg {
+  background-color: $purple-dark;
+}
+
+.orange-bg {
+  background-color: $info-orange;
+}
+
+.green-bg {
+    background-color: $green-blue-mid;
+}
+
+.blue-bg {
+  background-color: $button-grey;
+}
+
+.blue-dark-bg {
+  background-color: $blue-dark;
 }

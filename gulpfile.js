@@ -29,6 +29,21 @@ gulp.task("html", function () {
     .pipe(gulp.dest("dist"))
 })
 
+gulp.task("insight", function () {
+  return gulp.src("src/insight-pages/*")
+    .pipe(gulp.dest("dist/insight-pages"))
+})
+
+gulp.task("hypotheses", function () {
+  return gulp.src("src/insight-pages/hyp/*")
+    .pipe(gulp.dest("dist/insight-pages/hyp"))
+})
+
+gulp.task("business", function () {
+  return gulp.src("src/insight-pages/bp/*")
+    .pipe(gulp.dest("dist/insight-pages/bp"))
+})
+
 gulp.task("fonts", function () {
   return gulp.src("src/fonts/*")
     .pipe(gulp.dest("dist/fonts"))
@@ -52,12 +67,14 @@ gulp.task("watch", function () {
     }
   })
 
-  gulp.watch("src/index.html", ["html"]).on("change", browserSync.reload)
-  gulp.watch("src/detail-template.html", ["html"]).on("change", browserSync.reload)
+  gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload)
+  gulp.watch("src/insight-pages/*.html", ["insight"]).on("change", browserSync.reload)
   gulp.watch("src/css/style.scss", ["sass"])
+  gulp.watch("src/insight-pages/hyp/*", ["hypotheses"])
+  gulp.watch("src/insight-pages/bp/*", ["business"])
   gulp.watch("src/fonts/*", ["fonts"])
   gulp.watch("src/img/*", ["img"])
   gulp.watch("src/js/*", ["javascript"])
 })
 
-gulp.task('default', ["html", "sass", "fonts", "img", "javascript", "watch"]);
+gulp.task('default', ["html", "sass", "insight", "hypotheses", "business", "fonts", "img", "javascript", "watch"]);
