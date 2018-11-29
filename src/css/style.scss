@@ -140,12 +140,14 @@ div.data-cards {
 
 .card__content {
   height: 221px;
-  background-color: white;
-  padding: $edge-padding;
+  background-color: $purple-dark;
+  padding: 0 $edge-padding;
+  display: flex;
+  align-items: center;
 }
 
-.card--title .card__content {
-  background-color: $purple-dark;
+.card__content h1 {
+  margin-bottom: 0;
 }
 
 section.grid {
@@ -398,6 +400,13 @@ div.survey h3 {
   background-color: $blue-mid;
   color: #ffffff;
   cursor: pointer;
+}
+
+.no-links .card-style:hover {
+  background-color: #ffffff;
+  color: $body-copy;
+  cursor: default;
+
 }
 
 .card-style:hover h2.signpost  {

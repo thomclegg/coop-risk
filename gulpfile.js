@@ -67,18 +67,18 @@ gulp.task("javascript", function () {
 
 gulp.task("watch", function () {
 
-  browserSync.init( ["js/*.js"], {
+  browserSync.init( ["css/*.css"], {
     server: {
       baseDir: "dist"
     }
   })
 
   gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload)
+  gulp.watch("src/insight-pages/*.html", ["insight-pages"])
   gulp.watch("src/insight-pages/insights/*.html", ["insight"]).on("change", browserSync.reload)
   gulp.watch("src/css/style.scss", ["sass"])
-  gulp.watch("src/insight-pages/hyp/*", ["hypotheses"]).on("change", browserSync.reload)
-  gulp.watch("src/insight-pages/bp/*", ["business"]).on("change", browserSync.reload)
-  gulp.watch("src/insight-pages/*.html", ["insight-pages"])
+  gulp.watch("src/insight-pages/hyp/*", ["hypotheses"])
+  gulp.watch("src/insight-pages/bp/*", ["business"])
   gulp.watch("src/fonts/*", ["fonts"])
   gulp.watch("src/img/*", ["img"])
   gulp.watch("src/js/*", ["javascript"])
