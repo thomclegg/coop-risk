@@ -68,6 +68,7 @@ a.nav-links {
   padding-bottom: 2px;
   margin-left: 42px;
   border-bottom: 1px solid $body-copy;
+
   @include mq($mq-small) {
     font-size: 16px;
     margin-left: 22px;
@@ -75,7 +76,7 @@ a.nav-links {
 }
 
 a.nav-links:hover {
-  font-family: $bold;
+  color: $coop-link-blue;
   border-bottom: none;
 }
 
@@ -251,6 +252,21 @@ li {
   margin-left: 46px;
 }
 
+.text-block ul {
+  padding-top: 20px;
+  list-style-type: none;
+}
+
+img {
+  height: 260px;
+  margin: 46px 20px 42px 0;
+}
+
+.image-grid {
+  display: flex;
+  flex-direction: row;
+}
+
 
 // TEXT STYLES
 
@@ -292,6 +308,7 @@ li h3 {
   margin-left: 32px;
   margin-top: 20px;
 }
+
 
 h4 {
   font-size: 28px;
@@ -353,6 +370,15 @@ header p {
 .color-header .nav-items a {
   color: white;
   border-bottom: 1px solid #ffffff;
+}
+
+.color-header .nav-items a.nav-links:hover {
+  font-family: $bold;
+  border-bottom: none;
+}
+
+.color-header .nav-items a.nav-links.active {
+  border-bottom: none;
 }
 
 div.wrapper {
