@@ -1,16 +1,28 @@
+// gulp & sass
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+
+// css
 var cleanCss = require('gulp-clean-css')
+var postcss = require('gulp-postcss')
 var sourcemaps = require('gulp-sourcemaps')
 
 sass.compiler = require('node-sass');
 
+// browser refresh
 var browserSync = require('browser-sync').create()
+
 
 
 gulp.task("sass", function() {
   return gulp.src('src/css/style.scss')
     .pipe(sourcemaps.init())
+    .pipe(
+      postcss([
+        require("autoprefixer"),
+        require("postcss-preset-env")
+      ])
+    )
     .pipe(sass())
     .pipe(
       cleanCss({
